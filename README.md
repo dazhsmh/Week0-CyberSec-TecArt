@@ -21,9 +21,9 @@ Instalasi tools umum yang telah diinstall:
 
 Pengujian WSL dilakukan sepenuhnya melalui Command Line Interface (CLI).
 Langkah - langkah yang dilakukan:
-1. Membuat sebuah folder dengan nama Week0-CyberSec-TecArt dengan command ```mkdir```.
-2. Masuk ke dalam folder tersebut dengan command ```cd```.
-3. Membuat file baru dengan nama README.md dengan command ```nano```.
+1. Membuat sebuah folder dengan nama Week0-CyberSec-TecArt dengan command ```mkdir {nama_direktori}```.
+2. Masuk ke dalam folder tersebut dengan command ```cd {direktori}```.
+3. Membuat file baru dengan nama README.md dengan command ```nano {nama_file}```.
 4. Lalu menuliskan informasi berikut pada file tersebut:  
 - NIM
 - Nama
@@ -34,12 +34,16 @@ Langkah - langkah yang dilakukan:
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/nano-py.png" width="500">  
 
 Pengujian python dengan membuat program sederhana dilakukan dengan langkah - langkah berikut:
-1. Membuat program menggunakan ```nano``` dengan ekstensi file .py
+1. Membuat program menggunakan ```nano {nama program}``` dengan ekstensi file .py
 2. Menuliskan kode program python
-3. Menjalankan program menggunakan command ```python3```
+3. Menjalankan program menggunakan command ```python3 {nama_program.py}```
 
 # Challenge  
 Kerjakan challenge “Undo” pada platform CYLAB Academy:
 https://learn.cylabacademy.org/library/766  
-Dokumentasikan langkah-langkah penyelesaian challenge dalam write-up.
+Dokumentasikan langkah-langkah penyelesaian challenge dalam write-up.  
+
+## Pengerjaan  
+Tekan tombol Launch Instance untuk memulai.  
+Hubungkan server soal dengan command ```nc {ip_address} {port}```  
 
