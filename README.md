@@ -149,7 +149,38 @@ Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
 Image Size                      : 2560x1598
 Megapixels                      : 4.1
 ```
-Terlihat seluruh detail file foto. Karena nampak ada yang janggal dengan licensenya, saya menggunakan command ```echo "cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9" | base64 -d``` untuk mencoba mendecode teks tersebut dengan base64. Benar saja teks tersebut merupakan flag tersembunyi. Challenge pun diselesaikan.
+Terlihat seluruh detail file foto. Karena nampak ada yang janggal dengan licensenya, saya menggunakan command ```echo "cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9" | base64 -d``` untuk mencoba mendecode teks tersebut dengan base64. Benar saja teks tersebut merupakan flag tersembunyi. Challenge pun diselesaikan.  
+
+### - Pengerjaan Challenge The Numbers (Kategori Cryptography)  
+Sebelum mengerjakan challenge, pada WSL saya mempelajari cara membuat Python Virtual Environment (venv) lalu menginstall library pycryptodome. Setelah library diinstall saya menjalankan kode berikut:  
+```
+from Crypto . Cipher import AES
+from Crypto . Random import get_random_bytes
+key = get_random_bytes (16)
+data = b" Hello PyCryptodome !"
+cipher = AES . new ( key , AES . MODE_EAX )
+ciphertext , tag = cipher . encrypt_and_digest ( data )
+print (" Ciphertext :", ciphertext .hex () )
+cipher = AES . new ( key , AES . MODE_EAX , nonce = cipher . nonce )
+plaintext = cipher . decrypt ( ciphertext )
+print (" Plaintext :", plaintext . decode () )
+
+```
+Program dapat dijalankan tanpa error dan menghasilkan Plaintext: Hello
+PyCryptodome!.  
+
+Link: https://learn.cylabacademy.org/library/68  
+Pada challenge ini, saya mendapatkan sebuah gambar yang berisikan kumpulan angka unik disertai tanda kurung kurawal buka dan tutup. Hint pada challenge ini yaitu format flagnya adalah PICOCTF{}. Karena format flag dan nomor sama sama memiliki kurung kurawal, saya mencoba mencocoklogikan antara nomor yang di dapat dengan format flag.
+```
+16 = P
+9 = I
+3 = C
+15 = O
+3 = C
+20 = T
+6 = F
+```
+Dari pola tersebut didapatkan bahwa nomor tersebut telah diterjemahkan dengan sandi A1Z26. Kita hanya perlu menerjemahkannya kembali ke text semula. Di linux kita dapat menggunakan command ``` echo "16 9 3 15 3 20 6 { 20 8 5 14 21 13 2 5 18 19 13 1 19 15 14 }" | perl -pe 's/(\d+)/chr($1+96)/ge; s/\s//g' ``` untuk menerjemahkan kembali teks itu dalam sandi A1Z26. Flag pun berhasil didapatkan. Challenge selesai.
 
 ### - Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
 Link: https://tecartlab.sanca.site/challenges#Icibos%20Tekart%200-12  
