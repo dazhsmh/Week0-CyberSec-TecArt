@@ -30,6 +30,9 @@ Langkah - langkah yang dilakukan:
 - Divisi
 
 ## Pengujian Python  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/create-py.png" width="500">
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/nano-py.png" width="500">  
+
 Pengujian python dengan membuat program sederhana dilakukan dengan langkah - langkah berikut:
 1. Membuat program menggunakan ```nano``` dengan ekstensi file .py
 2. Menuliskan kode program python
