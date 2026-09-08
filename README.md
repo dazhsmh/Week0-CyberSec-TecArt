@@ -43,7 +43,7 @@ Kerjakan challenge “Undo” pada platform CYLAB Academy:
 https://learn.cylabacademy.org/library/766  
 Dokumentasikan langkah-langkah penyelesaian challenge dalam write-up.  
 
-## Pengerjaan Challenge Undo  
+## - Pengerjaan Challenge Undo  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/launch.png" width="500">  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/nc_soal.png" width="500">  
 
@@ -102,7 +102,7 @@ https://www.geeksforgeeks.org/linux-unix/rev-command-in-linux-with-examples/
 https://www.tecmint.com/tr-command-examples-in-linux/  
 https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed  
 
-### Pengerjaan Challenge IntroToBurp (Kategori Web)  
+### - Pengerjaan Challenge IntroToBurp (Kategori Web)  
 Link: https://learn.cylabacademy.org/library/419  
 1. Start instance lalu buka website target untuk mulai menganalisa.  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web1.png" width="500">
@@ -115,7 +115,7 @@ Link: https://learn.cylabacademy.org/library/419
 5. Saya mencoba request tersebut di mode repeater lalu mencoba menghapus "otp=1234" untuk melihat responsenya. Flag berhasil di dapatkan dan challenge berhasil diselesaikan.  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web5.png" width="500">
 
-### Pengerjaan Challenge Information (Kategori Forensics)  
+### - Pengerjaan Challenge Information (Kategori Forensics)  
 Link: https://learn.cylabacademy.org/library/186  
 Download file foto cat.jpg untuk dianalisis. Tampilan foto saat dibuka tampak normal. Gunakan command ```exiftool {nama_file}``` untuk menganalisis. 
 ```
@@ -151,7 +151,7 @@ Megapixels                      : 4.1
 ```
 Terlihat seluruh detail file foto. Karena nampak ada yang janggal dengan licensenya, saya menggunakan command ```echo "cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9" | base64 -d``` untuk mencoba mendecode teks tersebut dengan base64. Benar saja teks tersebut merupakan flag tersembunyi. Challenge pun diselesaikan.
 
-### Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
+### - Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
 Link: https://tecartlab.sanca.site/challenges#Icibos%20Tekart%200-12  
 Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. 
 
@@ -195,7 +195,7 @@ Pada main function, terdapat deklarasi variabel p = "iniString" dengan tipe data
 
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-4.png" width="500">  
 
-### Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
+### - Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
 Link: https://tecartlab.sanca.site/challenges#Icibos%20Tekart%201-13  
 Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. (Lagi)
 
