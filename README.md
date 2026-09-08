@@ -115,12 +115,19 @@ https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web5.png" width="500">
 
 ### Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
-Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib.
+Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. 
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-1.png" width="500">  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-2.png" width="500">  
+
 ```
 Belajar Reverse Engineering
 Masukan kata ajaib:
 ```
 Untuk mencari kata ajaib tersebut, saya membuka program ini di software Binary Ninja. Gunakan tampilan linear dan High Level IL untuk membaca kode programnya.
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-3.png" width="500">  
+
 ```
 00401166    int32_t main()
 
@@ -147,13 +154,22 @@ Untuk mencari kata ajaib tersebut, saya membuka program ini di software Binary N
 00401272        return 0
 ```
 Pada main function, terdapat deklarasi variabel p = "iniString" dengan tipe data char. Lalu di bawahnya terlihat ada program untuk menginput variabel r serta perulangan dan percabangan. Sepertinya kode program perulangan digunakan untuk menampilkan huruf yang disimpan dalam array p & r. Kondisi percabangan menunjukkan jika seluruh karakter dari variabel r sama dengan karakter variabel p, maka password benar. Maka kata ajaib yang dimaksud adalah "IniString". Setelah memasukkan kata tersebut di dalam program, saya berhasil mendapatkan flag dan menyelesaikan challenge ini.  
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-4.png" width="500">  
+
 ### Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
 Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. (Lagi)
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program2-1.png" width="500">  
+
 ```
 Belajar Reverse Engineering
 Masukan kata ajaib:
 ```
 Untuk mencari kata ajaib tersebut, saya membuka program ini di software Binary Ninja. Gunakan tampilan linear dan High Level IL untuk membaca kode programnya.
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program2-2.png" width="500">  
+
 ```
 004012b8    int32_t main()
 
@@ -180,3 +196,7 @@ Untuk mencari kata ajaib tersebut, saya membuka program ini di software Binary N
 004013bd        return 0
 ```
 Pada main function, terdapat deklarasi variabel p dan r dengan tipe data char. Lalu di bawahnya terlihat ada program untuk menginput variabel r serta perulangan dan percabangan. Sepertinya kode program perulangan digunakan untuk menampilkan huruf yang disimpan dalam array p & r. Terdapat pula kode ```__builtin_strcpy(dest: &p, src: "bukanString")``` yang menyalin string ke memory variabel p. Kondisi percabangan menunjukkan jika seluruh karakter dari variabel r sama dengan karakter variabel p, lalu panjang string tepat 11, maka password benar. Maka kata ajaib yang dimaksud adalah "bukanString". Setelah memasukkan kata tersebut di dalam program, saya berhasil mendapatkan flag dan menyelesaikan challenge ini.  
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program2-3.png" width="500">  
+
+
