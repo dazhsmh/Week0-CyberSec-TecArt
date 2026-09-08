@@ -16,6 +16,9 @@ Instalasi tools umum yang telah diinstall:
 - Python
 
 ## Pengujian WSL  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/create-readme.png" width="500">
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/nano-identitas.png" width="500">  
+
 Pengujian WSL dilakukan sepenuhnya melalui Command Line Interface (CLI).
 Langkah - langkah yang dilakukan:
 1. Membuat sebuah folder dengan nama Week0-CyberSec-TecArt dengan command ```mkdir```.
