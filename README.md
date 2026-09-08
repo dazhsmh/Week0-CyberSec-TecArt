@@ -104,5 +104,8 @@ https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed
 
 ### Pengerjaan Challenge IntroToBurp (Kategori Web)  
 
+Start instance lalu buka website target untuk mulai menganalisa. Saya menggunakan software Burp Suite yang telah terinstall di laptop saya untuk melakukan proses analisa. Website target berisikan form registrasi. Setelah mengisi form tersebut halaman dialihkan ke form otp.  
+Setelah itu saya membuka Burp Suite lalu pergi ke dashboard Proxy dan menghidupkan mode Intercept. Gunakan web browser dari Burp Suite untuk menganalisa website target. Disaat saya mengisi lalu mengirim form otp, website mengirimkan sebuah request yang berisikan nilai otp dengan metode POST. Saya mencoba request tersebut di mode repeater lalu mencoba menghapus "otp=1234" untuk melihat responsenya. Flag berhasil di dapatkan dan challenge berhasil diselesaikan
+
 ### Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
 ### Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
