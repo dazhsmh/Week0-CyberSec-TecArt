@@ -14,3 +14,15 @@ Instalasi tools umum yang telah diinstall:
 - WSL (Windows Subsytem for Linux) Distro Kali Linux  
 - Git dan Github  
 - Python
+
+## Pengujian WSL  
+Pengujian WSL dilakukan sepenuhnya melalui Command Line Interface (CLI).
+Langkah - langkah yang dilakukan:
+1. Membuat sebuah folder dengan nama Week0-CyberSec-TecArt dengan command ```mkdir```.
+2. Masuk ke dalam folder tersebut dengan command ```cd```.
+3. Membuat file baru dengan nama README.md dengan command ```nano```.
+4. Lalu menuliskan informasi berikut pada file tersebut:  
+- NIM
+- Nama
+- Divisi
+
