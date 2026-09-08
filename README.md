@@ -102,3 +102,7 @@ https://www.geeksforgeeks.org/linux-unix/rev-command-in-linux-with-examples/
 https://www.tecmint.com/tr-command-examples-in-linux/  
 https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed  
 
+## Pengerjaan Challenge IntroToBurp (Kategori Web)  
+
+## Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
+## Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
