@@ -103,9 +103,80 @@ https://www.tecmint.com/tr-command-examples-in-linux/
 https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed  
 
 ### Pengerjaan Challenge IntroToBurp (Kategori Web)  
-
-Start instance lalu buka website target untuk mulai menganalisa. Saya menggunakan software Burp Suite yang telah terinstall di laptop saya untuk melakukan proses analisa. Website target berisikan form registrasi. Setelah mengisi form tersebut halaman dialihkan ke form otp.  
-Setelah itu saya membuka Burp Suite lalu pergi ke dashboard Proxy dan menghidupkan mode Intercept. Gunakan web browser dari Burp Suite untuk menganalisa website target. Disaat saya mengisi lalu mengirim form otp, website mengirimkan sebuah request yang berisikan nilai otp dengan metode POST. Saya mencoba request tersebut di mode repeater lalu mencoba menghapus "otp=1234" untuk melihat responsenya. Flag berhasil di dapatkan dan challenge berhasil diselesaikan
+1. Start instance lalu buka website target untuk mulai menganalisa.  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web1.png" width="500">
+2. Saya menggunakan software Burp Suite yang telah terinstall di laptop saya untuk melakukan proses analisa.  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web2.png" width="500">
+3. Website target berisikan form registrasi. Setelah mengisi form tersebut halaman dialihkan ke form otp.  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web3.png" width="500">
+4. Setelah itu saya membuka Burp Suite lalu pergi ke dashboard Proxy dan menghidupkan mode Intercept. Gunakan web browser dari Burp Suite untuk menganalisa website target. Disaat saya mengisi lalu mengirim form otp, website mengirimkan sebuah request yang berisikan nilai otp dengan metode POST.  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web4.png" width="500">
+5. Saya mencoba request tersebut di mode repeater lalu mencoba menghapus "otp=1234" untuk melihat responsenya. Flag berhasil di dapatkan dan challenge berhasil diselesaikan.  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web5.png" width="500">
 
 ### Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
+Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib.
+```
+Belajar Reverse Engineering
+Masukan kata ajaib:
+```
+Untuk mencari kata ajaib tersebut, saya membuka program ini di software Binary Ninja. Gunakan tampilan linear dan High Level IL untuk membaca kode programnya.
+```
+00401166    int32_t main()
+
+00401178        char const* const p = "iniString"
+00401186        puts(str: "Belajar Reverse Engineering")
+0040119a        printf(format: "Masukan kata ajaib: ")
+004011b5        char r[0xc8]
+004011b5        fgets(buf: &r, n: 0xc8, fp: __bss_start)
+004011d3        r[strcspn(&r, "\n")] = 0
+004011db        int isCorrect = 1
+004011db        
+0040121b        for (int i = 0; i s<= 8; i += 1)
+0040120a            if (p[sx.q(i)] != r[sx.q(i)])
+0040120c                isCorrect = 0
+0040120c        
+00401221        if (isCorrect == 0)
+00401267            puts(str: "password salah!")
+00401221        else if (strlen(&r) != 9)
+00401267            puts(str: "password salah!")
+00401236        else
+00401242            puts(str: "password benar!")
+00401256            printf(format: "tecart{1ntr0_to_R3vEr1n9}")
+00401256        
+00401272        return 0
+```
+Pada main function, terdapat deklarasi variabel p = "iniString" dengan tipe data char. Lalu di bawahnya terlihat ada program untuk menginput variabel r serta perulangan dan percabangan. Sepertinya kode program perulangan digunakan untuk menampilkan huruf yang disimpan dalam array p & r. Kondisi percabangan menunjukkan jika seluruh karakter dari variabel r sama dengan karakter variabel p, maka password benar. Maka kata ajaib yang dimaksud adalah "IniString". Setelah memasukkan kata tersebut di dalam program, saya berhasil mendapatkan flag dan menyelesaikan challenge ini.  
 ### Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
+Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. (Lagi)
+```
+Belajar Reverse Engineering
+Masukan kata ajaib:
+```
+Untuk mencari kata ajaib tersebut, saya membuka program ini di software Binary Ninja. Gunakan tampilan linear dan High Level IL untuk membaca kode programnya.
+```
+004012b8    int32_t main()
+
+004012cd        char p[0xc]
+004012cd        __builtin_strcpy(dest: &p, src: "bukanString")
+004012e8        puts(str: "Belajar reversing lagi")
+004012fc        printf(format: "Masukan kata ajaib: ")
+00401317        char r[0xc8]
+00401317        fgets(buf: &r, n: 0xc8, fp: stdin)
+00401335        r[strcspn(&r, "\n")] = 0
+0040133d        int isCorrect = 1
+0040133d        
+0040137a        for (int i = 0; i s<= 0xa; i += 1)
+00401369            if (p[sx.q(i)] != r[sx.q(i)])
+0040136b                isCorrect = 0
+0040136b        
+00401380        if (isCorrect == 0)
+004013b2            puts(str: "password salah!")
+00401380        else if (strlen(&r) != 0xb)
+004013b2            puts(str: "password salah!")
+00401395        else
+004013a1            win(&r)
+004013a1        
+004013bd        return 0
+```
+Pada main function, terdapat deklarasi variabel p dan r dengan tipe data char. Lalu di bawahnya terlihat ada program untuk menginput variabel r serta perulangan dan percabangan. Sepertinya kode program perulangan digunakan untuk menampilkan huruf yang disimpan dalam array p & r. Terdapat pula kode ```__builtin_strcpy(dest: &p, src: "bukanString")``` yang menyalin string ke memory variabel p. Kondisi percabangan menunjukkan jika seluruh karakter dari variabel r sama dengan karakter variabel p, lalu panjang string tepat 11, maka password benar. Maka kata ajaib yang dimaksud adalah "bukanString". Setelah memasukkan kata tersebut di dalam program, saya berhasil mendapatkan flag dan menyelesaikan challenge ini.  
