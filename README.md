@@ -37,3 +37,9 @@ Pengujian python dengan membuat program sederhana dilakukan dengan langkah - lan
 1. Membuat program menggunakan ```nano``` dengan ekstensi file .py
 2. Menuliskan kode program python
 3. Menjalankan program menggunakan command ```python3```
+
+# Challenge  
+Kerjakan challenge “Undo” pada platform CYLAB Academy:
+https://learn.cylabacademy.org/library/766  
+Dokumentasikan langkah-langkah penyelesaian challenge dalam write-up.
+
