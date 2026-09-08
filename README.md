@@ -29,3 +29,8 @@ Langkah - langkah yang dilakukan:
 - Nama
 - Divisi
 
+## Pengujian Python  
+Pengujian python dengan membuat program sederhana dilakukan dengan langkah - langkah berikut:
+1. Membuat program menggunakan ```nano``` dengan ekstensi file .py
+2. Menuliskan kode program python
+3. Menjalankan program menggunakan command ```python3```
