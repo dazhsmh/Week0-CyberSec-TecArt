@@ -43,7 +43,7 @@ Kerjakan challenge “Undo” pada platform CYLAB Academy:
 https://learn.cylabacademy.org/library/766  
 Dokumentasikan langkah-langkah penyelesaian challenge dalam write-up.  
 
-## - Pengerjaan Challenge Undo  
+## [-] Pengerjaan Challenge Undo  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/launch.png" width="500">  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/nc_soal.png" width="500">  
 
@@ -102,7 +102,7 @@ https://www.geeksforgeeks.org/linux-unix/rev-command-in-linux-with-examples/
 https://www.tecmint.com/tr-command-examples-in-linux/  
 https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed  
 
-### - Pengerjaan Challenge IntroToBurp (Kategori Web)  
+### [-] Pengerjaan Challenge IntroToBurp (Kategori Web)  
 Link: https://learn.cylabacademy.org/library/419  
 1. Start instance lalu buka website target untuk mulai menganalisa.  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web1.png" width="500">
@@ -115,9 +115,13 @@ Link: https://learn.cylabacademy.org/library/419
 5. Saya mencoba request tersebut di mode repeater lalu mencoba menghapus "otp=1234" untuk melihat responsenya. Flag berhasil di dapatkan dan challenge berhasil diselesaikan.  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web5.png" width="500">
 
-### - Pengerjaan Challenge Information (Kategori Forensics)  
+### [-] Pengerjaan Challenge Information (Kategori Forensics)  
 Link: https://learn.cylabacademy.org/library/186  
-Download file foto cat.jpg untuk dianalisis. Tampilan foto saat dibuka tampak normal. Gunakan command ```exiftool {nama_file}``` untuk menganalisis. 
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/forensic-1.png" width="500">  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/forensic-2.png" width="500">
+
+
+Download file foto cat.jpg untuk dianalisis. Tampilan foto saat dibuka tampak normal. Saya telah menginstall tool Exiftool untuk digunakan menganalisis gambar. Gunakan command ```exiftool {nama_file}``` untuk menganalisis. 
 ```
 ExifTool Version Number         : 13.55
 File Name                       : cat.jpg
@@ -149,9 +153,18 @@ Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
 Image Size                      : 2560x1598
 Megapixels                      : 4.1
 ```
-Terlihat seluruh detail file foto. Karena nampak ada yang janggal dengan licensenya, saya menggunakan command ```echo "cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9" | base64 -d``` untuk mencoba mendecode teks tersebut dengan base64. Benar saja teks tersebut merupakan flag tersembunyi. Challenge pun diselesaikan.  
 
-### - Pengerjaan Challenge The Numbers (Kategori Cryptography)  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/forensic-3.png" width="500">
+
+Terlihat seluruh detail file foto. Karena nampak ada yang janggal dengan licensenya, saya menggunakan command ```echo "cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9" | base64 -d``` untuk mencoba mendecode teks tersebut dengan base64. Benar saja teks tersebut merupakan flag tersembunyi. Challenge pun terselesaikan.  
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/forensic-4.png" width="500">  
+
+
+### [-] Pengerjaan Challenge The Numbers (Kategori Cryptography)  
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/crypto-2.png" width="500">  
+
 Sebelum mengerjakan challenge, pada WSL saya mempelajari cara membuat Python Virtual Environment (venv) lalu menginstall library pycryptodome. Setelah library diinstall saya menjalankan kode berikut:  
 ```
 from Crypto . Cipher import AES
@@ -166,11 +179,19 @@ plaintext = cipher . decrypt ( ciphertext )
 print (" Plaintext :", plaintext . decode () )
 
 ```
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/crypto-1.png" width="500">  
+
 Program dapat dijalankan tanpa error dan menghasilkan Plaintext: Hello
 PyCryptodome!.  
 
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/crypto-3.png" width="500">  
+
 Link: https://learn.cylabacademy.org/library/68  
-Pada challenge ini, saya mendapatkan sebuah gambar yang berisikan kumpulan angka unik disertai tanda kurung kurawal buka dan tutup. Hint pada challenge ini yaitu format flagnya adalah PICOCTF{}. Karena format flag dan nomor sama sama memiliki kurung kurawal, saya mencoba mencocoklogikan antara nomor yang di dapat dengan format flag.
+Pada challenge ini, saya mendapatkan sebuah gambar yang berisikan kumpulan angka unik disertai tanda kurung kurawal buka dan tutup. Hint pada challenge ini yaitu format flagnya adalah PICOCTF{}. Karena format flag dan nomor sama sama memiliki kurung kurawal, saya mencoba mencocoklogikan antara nomor yang di dapat dengan format flag.  
+
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/crypto-4.png" width="500">  
+
 ```
 16 = P
 9 = I
@@ -180,9 +201,15 @@ Pada challenge ini, saya mendapatkan sebuah gambar yang berisikan kumpulan angka
 20 = T
 6 = F
 ```
-Dari pola tersebut didapatkan bahwa nomor tersebut telah diterjemahkan dengan sandi A1Z26. Kita hanya perlu menerjemahkannya kembali ke text semula. Di linux kita dapat menggunakan command ``` echo "16 9 3 15 3 20 6 { 20 8 5 14 21 13 2 5 18 19 13 1 19 15 14 }" | perl -pe 's/(\d+)/chr($1+96)/ge; s/\s//g' ``` untuk menerjemahkan kembali teks itu dalam sandi A1Z26. Flag pun berhasil didapatkan. Challenge selesai.
+Dari pola tersebut didapatkan bahwa nomor tersebut telah diterjemahkan dengan sandi A1Z26. Kita hanya perlu menerjemahkannya kembali ke text semula. Di linux kita dapat menggunakan command ``` echo "16 9 3 15 3 20 6 { 20 8 5 14 21 13 2 5 18 19 13 1 19 15 14 }" | perl -pe 's/(\d+)/chr($1+96)/ge; s/\s//g' ``` untuk menerjemahkan kembali teks itu dalam sandi A1Z26. Flag pun berhasil didapatkan. Challenge selesai.  
 
-### - Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
+<img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/crypto-5.png" width="500">  
+
+Referensi:  
+https://mutiinsani.medium.com/virtual-environment-pada-python-b1f49816ee51  
+https://www.scribd.com/document/523257737/codes  
+
+### [-] Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
 Link: https://tecartlab.sanca.site/challenges#Icibos%20Tekart%200-12  
 Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. 
 
@@ -226,7 +253,7 @@ Pada main function, terdapat deklarasi variabel p = "iniString" dengan tipe data
 
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-4.png" width="500">  
 
-### - Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
+### [-] Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
 Link: https://tecartlab.sanca.site/challenges#Icibos%20Tekart%201-13  
 Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. (Lagi)
 
