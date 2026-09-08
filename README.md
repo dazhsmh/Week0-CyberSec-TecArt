@@ -103,6 +103,7 @@ https://www.tecmint.com/tr-command-examples-in-linux/
 https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed  
 
 ### Pengerjaan Challenge IntroToBurp (Kategori Web)  
+Link: https://learn.cylabacademy.org/library/419  
 1. Start instance lalu buka website target untuk mulai menganalisa.  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web1.png" width="500">
 2. Saya menggunakan software Burp Suite yang telah terinstall di laptop saya untuk melakukan proses analisa.  
@@ -114,7 +115,44 @@ https://medium.com/@marshal_demi/using-rot13-and-tr-command-e67c2bd607ed
 5. Saya mencoba request tersebut di mode repeater lalu mencoba menghapus "otp=1234" untuk melihat responsenya. Flag berhasil di dapatkan dan challenge berhasil diselesaikan.  
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/web5.png" width="500">
 
+### Pengerjaan Challenge Information (Kategori Forensics)  
+Link: https://learn.cylabacademy.org/library/186  
+Download file foto cat.jpg untuk dianalisis. Tampilan foto saat dibuka tampak normal. Gunakan command ```exiftool {nama_file}``` untuk menganalisis. 
+```
+ExifTool Version Number         : 13.55
+File Name                       : cat.jpg
+Directory                       : .
+File Size                       : 878 kB
+File Modification Date/Time     : 2026:09:08 22:38:56+08:00
+File Access Date/Time           : 2026:09:08 22:45:57+08:00
+File Inode Change Date/Time     : 2026:09:08 22:45:56+08:00
+File Permissions                : -rwxrwxrwx
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.02
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+Current IPTC Digest             : 7a78f3d9cfb1ce42ab5a3aa30573d617
+Copyright Notice                : PicoCTF
+Application Record Version      : 4
+XMP Toolkit                     : Image::ExifTool 10.80
+License                         : cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9
+Rights                          : PicoCTF
+Image Width                     : 2560
+Image Height                    : 1598
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 2560x1598
+Megapixels                      : 4.1
+```
+Terlihat seluruh detail file foto. Karena nampak ada yang janggal dengan licensenya, saya menggunakan command ```echo "cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9" | base64 -d``` untuk mencoba mendecode teks tersebut dengan base64. Benar saja teks tersebut merupakan flag tersembunyi. Challenge pun diselesaikan.
+
 ### Pengerjaan Challenge Icibos Tekart 0 (Kategori Reverse Engineering dan Binary Exploitation)  
+Link: https://tecartlab.sanca.site/challenges#Icibos%20Tekart%200-12  
 Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. 
 
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-1.png" width="500">  
@@ -158,6 +196,7 @@ Pada main function, terdapat deklarasi variabel p = "iniString" dengan tipe data
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program1-4.png" width="500">  
 
 ### Pengerjaan Challenge Icibos Tekart 1 (Kategori Reverse Engineering dan Binary Exploitation)  
+Link: https://tecartlab.sanca.site/challenges#Icibos%20Tekart%201-13  
 Install program lalu coba jalankan dan analisis. Saya juga menggunakan software Binary Ninja untuk meganalisis program ini. Saat menjalankan program, muncul text dimana kita bisa menginput kata ajaib. (Lagi)
 
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/program2-1.png" width="500">  
