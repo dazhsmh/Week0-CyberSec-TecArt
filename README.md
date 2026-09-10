@@ -21,9 +21,9 @@ Instalasi tools umum yang telah diinstall:
 
 Pengujian WSL dilakukan sepenuhnya melalui Command Line Interface (CLI).
 Langkah - langkah yang dilakukan:
-1. Membuat sebuah folder dengan nama Week0-CyberSec-TecArt dengan command ```mkdir {nama_direktori}```.
-2. Masuk ke dalam folder tersebut dengan command ```cd {direktori}```.
-3. Membuat file baru dengan nama README.md dengan command ```nano {nama_file}```.
+1. Membuat sebuah folder dengan nama Week0-CyberSec-TecArt dengan command ```mkdir [nama_direktori]```.
+2. Masuk ke dalam folder tersebut dengan command ```cd [direktori]```.
+3. Membuat file baru dengan nama README.md dengan command ```nano [nama_file]```.
 4. Lalu menuliskan informasi berikut pada file tersebut:  
 - NIM
 - Nama
@@ -36,7 +36,7 @@ Langkah - langkah yang dilakukan:
 Pengujian python dengan membuat program sederhana dilakukan dengan langkah - langkah berikut:
 1. Membuat program menggunakan ```nano {nama program}``` dengan ekstensi file .py
 2. Menuliskan kode program python
-3. Menjalankan program menggunakan command ```python3 {nama_program.py}```
+3. Menjalankan program menggunakan command ```python3 [nama_program.py]```
 
 # Challenge  
 Kerjakan challenge “Undo” pada platform CYLAB Academy:
@@ -48,7 +48,7 @@ Dokumentasikan langkah-langkah penyelesaian challenge dalam write-up.
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/nc_soal.png" width="500">  
 
 - Tekan tombol Launch Instance untuk memulai.  
-- Hubungkan server soal dengan command ```nc {ip_address} {port}```  
+- Hubungkan server soal dengan command ```nc [ip_address] [port]```  
 
 Berikut 5 step yang muncul untuk menyelesaikan challenge ini.  
 
@@ -121,7 +121,7 @@ Link: https://learn.cylabacademy.org/library/186
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/forensic-2.png" width="500">
 
 
-Download file foto cat.jpg untuk dianalisis. Tampilan foto saat dibuka tampak normal. Saya telah menginstall tool Exiftool untuk digunakan menganalisis gambar. Gunakan command ```exiftool {nama_file}``` untuk menganalisis. 
+Download file foto cat.jpg untuk dianalisis. Tampilan foto saat dibuka tampak normal. Saya telah menginstall tool Exiftool untuk digunakan menganalisis gambar. Gunakan command ```exiftool [nama_file]``` untuk menganalisis. 
 ```
 ExifTool Version Number         : 13.55
 File Name                       : cat.jpg
