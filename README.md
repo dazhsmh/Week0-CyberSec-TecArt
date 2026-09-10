@@ -34,7 +34,7 @@ Langkah - langkah yang dilakukan:
 <img src="https://github.com/dazhsmh/Week0-CyberSec-TecArt/blob/main/nano-py.png" width="500">  
 
 Pengujian python dengan membuat program sederhana dilakukan dengan langkah - langkah berikut:
-1. Membuat program menggunakan ```nano {nama program}``` dengan ekstensi file .py
+1. Membuat program menggunakan ```nano [nama program]``` dengan ekstensi file .py
 2. Menuliskan kode program python
 3. Menjalankan program menggunakan command ```python3 [nama_program.py]```
 
